@@ -1,14 +1,8 @@
 <template>
   <q-card class="q-pb-xl">
     <q-card-section>
-        <div  class="q-mt-sm">
-          <q-img :src="'https://ichef.bbci.co.uk/news/976/cpsprodpb/13CE5/production/_112052118_new.jpg'"
-            style="max-height:500px">
-            <div class="absolute-full text-subtitle2 flex flex-center" style="font-size:40px;">
-            Les statistiques au temps du Covid 19
-            </div>
-          </q-img>
-        </div>
+        <Banniere
+      titre="Les statistiques au temps du Covid 19"></Banniere>
     </q-card-section>
     <q-card-section>
       <div class="q-gutter-sm row justify-center">
@@ -30,12 +24,58 @@
         </div>
       </div>
     </q-card-section>
+    <q-card-section >
+      <div class=" q-gutter-sm justify-center " style="margin:15px 50px 15px 50px; background-color: #F2F2F2;">
+          <div> Données du {{date}} <q-btn> Cliquer ici pour avoir plus d'information</q-btn></div>
+        <div class="q-gutter-sm row " >
+          <div class="col q-pt-lg q-pl-lg" >
+
+            </div>
+          <div class="col q-pt-lg q-pr-lg">
+            <img src="~assets/carteFrance.svg"/>
+          </div>
+          <div>
+
+          </div>
+        </div>
+      </div>
+    </q-card-section>
+    <q-card-section>
+      <div style="margin:0px 50px 30px 50px;color:#32584E;">
+        <q-img :src="'https://cache.magazine-avantages.fr/data/photo/w1536_ci/1jw/voyage-coronavirus-assurance-covid.webp'"
+               style="max-height:600px;"
+               class="rounded-borders shadow-2">
+          <h4 style="padding-left:10px; font-weight:bold;">Un voyage de prévu,<br> notre site vous renseigne <br>sur la situation sanitaire <br>de votre destination <br> <q-btn flat style="margin-left:140px;" @click="$router.replace('/voyage')">  <i class='bx bxs-plane bx-md bx-rotate-90'></i> </q-btn></h4>
+        </q-img>
+      </div>
+    </q-card-section>
   </q-card>
 </template>
 
 <script>
+import {Component} from "vue-property-decorator";
+import Service from 'src/service/infoCovid';
+import Banniere from 'components/Banniere.vue';
+
+let today = new Date();
+let dd = String(today.getDate()-1).padStart(2, '0');
+let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+let yyyy = today.getFullYear();
+today =dd+'-'+mm+'-'+yyyy;
+
 export default {
-name: "AccueilComponent"
+  name: "AccueilComponent",
+  components: { Banniere },
+  data(){
+    return {
+      date : today
+    }
+  },
+  async mounted() {
+    let covidService = new Service();
+
+    this.idf = await covidService.getInfoRegion();
+  }
 }
 </script>
 

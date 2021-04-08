@@ -70,6 +70,7 @@
                <q-btn flat  icon="facebook" style="margin-right:-20px;" />
                <q-btn flat style="margin-right:-20px;"> <i class='bx bxl-twitter bx-sm'></i></q-btn>
                <q-btn flat> <i class='bx bxl-instagram bx-sm' ></i> </q-btn>
+
              </template>
 
           </div>
@@ -106,4 +107,5 @@ export default class MainLayout extends Vue {
 div
   font-family $fontfamily
   font-size $space-base
+
 </style>

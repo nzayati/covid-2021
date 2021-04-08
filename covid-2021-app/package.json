@@ -19,7 +19,8 @@
   },
   "devDependencies": {
     "@quasar/app": "^2.0.0",
-    "@types/node": "^10.17.15"
+    "@types/node": "^10.17.15",
+    "vue-svg-loader": "^0.16.0"
   },
   "browserslist": [
     "ie >= 11",
