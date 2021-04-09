@@ -4,8 +4,9 @@
       <Banniere
         titre="Information voyage"></Banniere>
     </q-card-section>
-
-    <div> <p>voyage </p></div>
+    <q-card-section>
+      <div> <p>voyage </p></div>
+    </q-card-section>
   </q-card>
 </template>
 

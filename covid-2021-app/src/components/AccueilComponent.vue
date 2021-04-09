@@ -31,8 +31,8 @@
           <div class="col q-pt-lg q-pl-lg" >
 
             </div>
-          <div class="col q-pt-lg q-pr-lg">
-            <img src="~assets/carteFrance.svg"/>
+          <div class="col q-pt-lg" style ="margin:0 110px 30px 10px;">
+            <img src="~assets/carteFranceSVG.svg"/>
           </div>
           <div>
 
@@ -54,16 +54,17 @@
 
 <script>
 import {Component} from "vue-property-decorator";
-import Service from 'src/service/infoCovid';
+import Service from 'src/service/serviceInfoCovid';
 import Banniere from 'components/Banniere.vue';
 
 let today = new Date();
 let dd = String(today.getDate()-1).padStart(2, '0');
 let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 let yyyy = today.getFullYear();
-today =dd+'-'+mm+'-'+yyyy;
+today =yyyy+'-'+mm+'-'+dd;
 
 export default {
+
   name: "AccueilComponent",
   components: { Banniere },
   data(){
@@ -72,7 +73,7 @@ export default {
     }
   },
   async mounted() {
-    let covidService = new Service();
+    let covidService = new Service(today);
 
     this.idf = await covidService.getInfoRegion();
   }

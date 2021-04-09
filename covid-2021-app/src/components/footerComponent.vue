@@ -2,12 +2,14 @@
   <div>
     <q-card style="background-color:#32584E; height:320px">
       <q-card-section class="q-mb-md">
-        <div class="row q-gutter-sm row justify-center">
+        <div class=" q-gutter-sm row ">
          <div class="col">
            <p style="color:white;font-size:20px;text-align:center;" class="q-mt-lg"> N'oubliez pas les gestes barrières</p>
-           <q-img :src="'geste_barriere.png'"
-           style="max-width:700px;"
-           class="q-ml-xl"/>
+           <div class="flex justify-center">
+             <q-img :src="'geste_barriere.png'"
+             style="max-width:700px;"
+             class="q-ml-xl"/>
+             </div>
          </div>
           <div class="col rounded-borders shadow-2 q-mr-md" style="background-color:#F2F2F2;max-width:450px;height:230px; color:#32584E;">
             <div class="row justify-center q-mt-lg" >
