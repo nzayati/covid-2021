@@ -140,6 +140,31 @@ export default class serviceInfoCovid {
       return CovidDataCases;
     }
 
+  getCountries(){
+    return new Promise(function (resolve, reject) {
+      axios
+        .get('https://coronavirus-19-api.herokuapp.com/countries')
+        .then(response => {
+          resolve(response);
+          console.log(JSON.stringify(response));
+        }).catch(error => {
+        reject();
+      });
+    });
+  }
 
 
+  async getResultCountry(destination) {
+    let url = 'https://coronavirus-19-api.herokuapp.com/countries/'+destination;
+    return new Promise(function (resolve, reject) {
+      axios
+        .get(url)
+        .then(response => {
+          resolve(response);
+          console.log(JSON.stringify(response));
+        }).catch(error => {
+        reject();
+      });
+    });
+  }
 }
