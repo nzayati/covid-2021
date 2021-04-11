@@ -7,7 +7,7 @@
     <q-card-section>
       <div class="flex justify-center">
         <div class= "row" >
-          <div class="col"><q-btn style="padding:10px;width:200px; background-color:#32584E;font-size:14px;"text-color="white" label="Info France" @click="getResultFrance" /></div>
+          <div class="col"><q-btn style="padding:10px;width:200px; background-color:#32584E;font-size:14px;" text-color="white" label="Info France" @click="getResultFrance" /></div>
           <div class="col" style="max-width:320px ;margin-right:50px;">
             <q-input outlined v-model="date"  mask="date" :rules="['date']">
               <template v-slot:append>
@@ -30,7 +30,7 @@
               </template>
             </q-select>
           </div>
-          <div class="col"><q-btn style="padding:10px;margin-left:40px;width:200px; background-color:#32584E;font-size:14px;"text-color="white" @click ="getinfoDepartement" label="Info département" /></div>
+          <div class="col"><q-btn style="padding:10px;margin-left:40px;width:200px; background-color:#32584E;font-size:14px;" text-color="white" @click ="getinfoDepartement" label="Info département" /></div>
         </div>
       </div>
     </q-card-section>
@@ -131,7 +131,7 @@
                 </template>
               </q-input>
             </div>
-            <div class="col"><q-btn style="padding:10px;width:250px; background-color:#32584E;font-size:14px;"text-color="white" label="Modifier le graphe" @click="changeGraphe" /></div>
+            <div class="col"><q-btn style="padding:10px;width:250px; background-color:#32584E;font-size:14px;" text-color="white" label="Modifier le graphe" @click="changeGraphe" /></div>
           </div>
         </div>
         <div class="flex justify-center">
@@ -143,7 +143,7 @@
     <q-card-section>
       <div class="flex justify-center">
         <div>
-          <q-btn style="padding:10px;width:350px; background-color:#32584E;font-size:14px;"text-color="white" label="Ou se faire dépister?" @click="changeGraphe" />
+          <q-btn style="padding:10px;width:350px; background-color:#32584E;font-size:14px;" text-color="white" label="Ou se faire dépister?" @click="changeGraphe" />
         </div>
 
       </div>
