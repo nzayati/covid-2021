@@ -12,7 +12,7 @@
       <div class="flex justify-center">
         <div class="row">
           <q-card class="my-card q-pt shadow-10" style="margin:10px;text-align:center;width:400px; lenghth:400px;">
-            <q-card-section class="text-white " style="max-width: 400px; background-color: #32584E;">
+            <q-card-section class=" " style="max-width: 400px;color:#32584E; background-color: white;">
               <div class="text-h6 text-weight-bold">Nombre de personnes ayant reçu la 1ere dose</div>
               <div class="text-overline " >*Deux doses sont nécessaires pour considérer qu'une personne est vaccinée<br><div class="text-h3 text-weight-bold text-center"> {{cum_dose1}}</div></div>
             </q-card-section>
@@ -25,7 +25,7 @@
       <div class="flex justify-center">
         <div class="row">
           <q-card class="my-card q-pt shadow-10" style="margin:10px;text-align:center;width:400px;lenghth:400px;">
-            <q-card-section class="text-white " style="max-width: 400px; background-color: #32584E;">
+            <q-card-section class=" " style="max-width: 400px;color:#32584E; background-color:white;">
               <div class="text-h6 text-weight-bold">Nombre de personnes <br>vaccinées</div>
               <div class="text-overline ">*nombre total des personnes ayant reçu les deux doses de vaccin <br><div class="text-h3 text-weight-bold"> {{cum_dose2}}</div></div>
             </q-card-section>
@@ -134,7 +134,7 @@
       <div class="flex justify-center">
         <div class="row">
           <q-card class="my-card q-pt shadow-10" style="margin:10px;text-align:center;width:400px; lenghth:400px;">
-            <q-card-section class="text-white " style="max-width: 400px; background-color: #32584E;">
+            <q-card-section class=" " style="max-width: 400px;color:#32584E; background-color: white;">
               <div class="text-h6 text-weight-bold">Nombre de personnes ayant reçu la 1ere dose</div>
               <div class="text-overline " >*Deux doses sont nécessaires pour considérer qu'une personne est vaccinée<br><div class="text-h3 text-weight-bold text-center"> {{dose1_dep}}</div></div>
             </q-card-section>
@@ -148,7 +148,7 @@
       <div class="flex justify-center">
         <div class="row">
           <q-card class="my-card q-pt shadow-10" style="margin:10px;text-align:center;width:400px;lenghth:400px;">
-            <q-card-section class="text-white " style="max-width: 400px; background-color: #32584E;">
+            <q-card-section class=" " style="max-width: 400px;color:#32584E; background-color: white;">
               <div class="text-h6 text-weight-bold">Nombre de personnes <br>vaccinées</div>
               <div class="text-overline ">*nombre total des personnes ayant reçu les deux doses de vaccin <br><div class="text-h3 text-weight-bold"> {{dose2_dep}}</div></div>
             </q-card-section>
@@ -159,19 +159,43 @@
     </div>
 
 
-    
 
 
+    <div class= "q-pa-lg" ></div>
 
+<q-card class="my-card q-pa-xl ">
+  <div class="flex justify-center">
+          <q-card class="my-card q-pa-md my-card q-pt shadow-10 " style="margin-bottom:70px;text-align:center; width:850px;max-height:100px;">
+            <q-card-section class="text-black" >
+              <div style ="font-size:30px;color:#32584E;font-weight:bold;"> Consulter les centres de vaccination</div>
+            </q-card-section>
+          </q-card>
+        </div>
+        </q-card>
+
+    <div class="flex justify-center">
     <div class="q-pa-lg q-gutter-sm ">
-    <q-banner class="shadow-8 text-black" style="background-color: #99c7cd; text-align:center; max-width:800px;max-height:100px">
-      Consulter les centres de vaccination
+    <q-banner class="shadow-8 text-white text-weight-bolder text-uppercase" style="background-color:#32584E;text-align:center; ">
+      Centres disponibles à proximité de chez vous
       <template v-slot:action>
         <q-btn flat color="white" label="Dismiss" />
         <q-btn flat color="white" label="Update Credit Card" />
       </template>
     </q-banner>
     </div>
+    </div>
+
+<div class="flex justify-center">
+  <div class="q-pa-md">
+    <q-table 
+      :data="data"
+      :columns="columns"
+      row-key="name"
+    />
+  </div>
+  </div>
+
+
   
     
 
@@ -205,6 +229,76 @@ name: "Vaccination",
     dose2_dep: "",
     percent_dose1: "",
     percent_dose2: "",
+    columns: [
+      {
+        name: 'name',
+        required: true, 
+        label: 'Nom du centre de vaccination',
+        align: 'center',
+        classes: 'bg-teal-1 ellipsis',
+        style: 'width: 450px',
+        headerClasses: 'bg-teal-10 text-white text-overline text-uppercase text-weight-bold',
+        field: row => row.name,
+        sortable: true
+      },
+      {
+        name: 'adresse',
+        required: true, 
+        label: 'Adresse ',
+        align: 'center',
+        field: 'adresse' ,
+        sortable: true,
+        classes: 'bg-teal-1 ellipsis',
+        style: 'width: 450px',
+        headerClasses: 'bg-teal-10 text-white text-overline text-uppercase text-weight-bold',
+
+      },
+      {
+        name: 'rdv',
+        required: true, 
+        label: 'Prise de rendez-vous',
+        field: 'rdv',
+        align: 'center',
+        sortable: true,
+        classes: 'bg-teal-1 ellipsis',
+        style: 'width: 450px',
+        headerClasses: 'bg-teal-10 text-white text-overline text-uppercase text-weight-bold',
+
+      },
+    ],
+    data: [
+      {
+        name: 'Centre de vaccination LE roy',
+        adresse :'15 rue du président françois Miteerand Beaubourg. 75015 PARIS',
+        rdv : 'www.doctolib.fr/centre/sort/paris' ,
+      },
+        {
+        name: '',
+        adresse :'',
+        rdv : '' ,
+      },
+        {
+        name: '',
+        adresse :'',
+        rdv : '' ,
+      },
+        {
+        name: '',
+        adresse :'',
+        rdv : '' ,
+      },
+        {
+        name: '',
+        adresse :'',
+        rdv : '' ,
+      },
+        {
+        name: '',
+        adresse :'',
+        rdv : '' ,
+      },
+    ]
+
   }
   },
 
@@ -256,6 +350,7 @@ async mounted() {
       if (this.model == null) {
         this.erreur = "VEUILLEZ CHOISIR UN DEPARTEMENT !"
       }else{
+        this.erreur= "";
         let resultAPI = await vaccinAPI.getDataFromAPI(yesterday);
         let departement = this.model;
         for(var i=0; i<105; i++){
