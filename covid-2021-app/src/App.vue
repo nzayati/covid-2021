@@ -7,6 +7,7 @@
 import { Vue, Component } from 'vue-property-decorator';
 
 @Component
-export default class App extends Vue {}
+class App extends Vue {}
+export default App
 </script>
 
