@@ -14,22 +14,22 @@
           <div class="col rounded-borders shadow-2 q-mr-md" style="background-color:#F2F2F2;max-width:450px;height:230px; color:#32584E;">
             <div class="row justify-center q-mt-lg" >
             <q-list >
-                <q-item clickable style="margin-bottom:-25px;">Accueil
+                <q-item clickable style="margin-bottom:-25px;" @click="$router.replace('/')">Accueil
                 </q-item>
-                <q-item clickable style="margin-bottom:-25px;">Statistique des cas et hospitalisation
+                <q-item clickable style="margin-bottom:-25px;" @click="$router.replace('/statistique')" >Statistique des cas et hospitalisation
                 </q-item>
-                <q-item clickable style="margin-bottom:-25px;">Information vaccination
+                <q-item clickable style="margin-bottom:-25px;" @click="$router.replace('/vaccination')">Information vaccination
                 </q-item>
-                <q-item clickable style="margin-bottom:-25px;">Données prévisionnelles
+                <q-item clickable style="margin-bottom:-25px;" @click="$router.replace('/prevision')">Données prévisionnelles
                 </q-item>
-                <q-item clickable style="margin-bottom:-25px;">Information voyage
+                <q-item clickable style="margin-bottom:-25px;" @click="$router.replace('/voyage')">Information voyage
                 </q-item>
-                <q-item clickable style="margin-bottom:-15px;">Contact
+                <q-item clickable style="margin-bottom:-15px;" @click="$router.replace('/contact')" >Contact
                 </q-item>
                 <q-separator />
                 <q-item style="margin-bottom:-25px;">Tel: 0657890988
                 </q-item>
-                <q-item>Email: sarah_12891@hotmail.fr
+                <q-item>Email: info-covid-19@gmail.com
                 </q-item>
               </q-list>
             </div>

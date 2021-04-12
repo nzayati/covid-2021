@@ -1,22 +1,17 @@
 <template>
-  <q-card class="q-pb-xl">
-    <q-card-section>
-      <Banniere
-        titre="Contact"></Banniere>
-    </q-card-section>
-
-    <div> <p>contact </p></div>
-  </q-card>
+  <q-page className="justify-evenly">
+    <contact-component></contact-component>
+  </q-page>
 </template>
 
-<script>
-import Banniere from 'components/Banniere.vue';
-export default {
-name: "Contact",
-  components: { Banniere }
-}
+<script lang="ts">
+import ContactComponent from 'components/ContactComponent.vue';
+import {Vue, Component} from 'vue-property-decorator';
+
+@Component({
+  components: {ContactComponent}
+})
+export default class Contact extends Vue {
+
+};
 </script>
-
-<style scoped>
-
-</style>

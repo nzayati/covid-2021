@@ -1,22 +1,17 @@
 <template>
-  <q-card class="q-pb-xl">
-    <q-card-section>
-      <Banniere
-        titre="Données prévisionnelles"></Banniere>
-    </q-card-section>
-
-    <div> <p>prévision </p></div>
-  </q-card>
+  <q-page className="justify-evenly">
+    <prevision-component></prevision-component>
+  </q-page>
 </template>
 
-<script>
-import Banniere from 'components/Banniere.vue';
-export default {
-name: "Prevision",
-  components: { Banniere },
-}
+<script lang="ts">
+import PrevisionComponent from 'components/PrevisionComponent.vue';
+import {Vue, Component} from 'vue-property-decorator';
+
+@Component({
+  components: {PrevisionComponent}
+})
+export default class Prevision extends Vue {
+
+};
 </script>
-
-<style scoped>
-
-</style>

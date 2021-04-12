@@ -1,0 +1,15 @@
+READE ME:
+<-- Etape à suivre pour lancer le site-->
+1. Installation de Node.js et de Npm ou de Yarn
+2. installation de Quasar
+3. Visualiser le code de préférence avec ces éditeurs: VScode ou Webstorm
+4. Après avoir récupérer le projet faire : cd Covid-2021-app
+   pour accéder au front
+3.lancer la commande:  npm install -g @quasar/cli
+   pour installer quasar cli
+4.lancer la commande : npm install  pour installer les dépendances
+5.lancer la commande : quasar dev pour lancer le site , utilisation du port localhost8080
+6.Une API key a été utilisée pour faire des appels aux api de  google map
+    => Api key : AIzaSyA4Yepta8VmIPyeteE_olt4LSJ3NbCAvu0
+    Si la géolocalisation ainsi que la mise en place des centres de dépistage ou de vaccination ne fonctionnent
+    pas ceci pourrait etre du à l'expiration de l'Api key.
